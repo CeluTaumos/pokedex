@@ -1,25 +1,8 @@
 <?php
-//ARRANCA SESIÓN\(￣︶￣*\))
+
 session_start();
-$error = "";
-// si esta apretado el boton d enviar
-if (isset($_POST["enviar"])) {
-
-
-    if ($_POST["user"] == "mica" && $_POST["pw"] == 123) {
-
-        $_SESSION["user"] = $_POST["user"];
-        //mica-axel-ludmi-cele--MALC *^____^*
-        //CREO LA COOKIE
-        setcookie("malc", "poke", time() + 1600);
-        // lo q hace lo redirige a otra pag. --no lo ve el user
-        header("location: index-logueado.php");
-        exit();
-    } else {
-        $error = "user o clave erroneos";
-    }
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -46,29 +29,30 @@ if (isset($_POST["enviar"])) {
                 </a>
                 <h4 class="logo">Pokedex:Gotta catch 'em all! </h4>
 
-                <!-- INPUTS - BARRITA LOGGIN -->
-                <form action="index.php" method="post">
-                    <div class="input-group ">
-                        <input type="text" placeholder="Ingrese su usuario ^_^" class="ms-2 " name="user">
-                        <input type="password" placeholder="Ingrese su contraseña :P" class="ms-2"name="pw">
-                        <input type="submit" value="GOTTCHA!" class="ms-2" name="enviar">
-                    </div>
-                </form>
-                <!-- SI LA SESIÓN FALLA POR ALGUNA RAZÓN -->
-                <?php
-                echo $error;
-                ?>
-            </div>
+
         </nav>
 
     </header>
     <main class="container">
         <!-- BUSCADOR -->
         <div class="mt-3">
+            <?php
+            if (isset($_SESSION["user"])) {
+                echo "bienvenido cazador " . $_SESSION["user"] . " ¡atrápalos a todos!";
+            } else {
+                session_destroy();
+                header("location: index.php");
+                exit();
+            }
+
+            ?>
+        </div>
+        <div class="mt-3">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Ingrese el nombre,tipo o número de Pókemon" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
             </form>
+
         </div>
         <!-- GRILLA DE POKE-INFO -->
         <div class="container text-center mt-3">

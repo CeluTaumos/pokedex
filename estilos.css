@@ -1,11 +1,24 @@
-.color-verde{
-    background-color: rgba(127, 255, 212, 0.703);
-    color: rgb(18, 46, 37);
-    border-color:  rgb(18, 46, 37);
+*{
+    font-family: 'Fjalla One', sans-serif;
+    box-sizing: border-box;
 }
 
-input{
-    background-color: aliceblue;
+
+.color-base {
+    background-color: rgba(73, 145, 253, 0.703);
+    color: rgb(23, 33, 101);
+
+}
+
+@font-face {
+    font-family: 'Pokemon'; /* Nombre de la fuente que deseas utilizar */
+    src: url('./fonts/poke-font.ttf') format('woff'); /* Ruta a tu fuente y formato */
+    /* Puedes agregar más formatos de fuente aquí si tienes diferentes versiones (woff, woff2, ttf, etc.) */
+  }
+.logo{
+    font-family: 'Pokemon',sans-serif;
+}
+input {
+    background-color: aliceblue; 
     border: none;
-  
 }
