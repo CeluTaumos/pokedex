@@ -1,0 +1,11 @@
+.color-verde{
+    background-color: rgba(127, 255, 212, 0.703);
+    color: rgb(18, 46, 37);
+    border-color:  rgb(18, 46, 37);
+}
+
+input{
+    background-color: aliceblue;
+    border: none;
+  
+}
