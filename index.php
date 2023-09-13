@@ -41,7 +41,7 @@ if (isset($_POST["enviar"])) {
         <nav class="navbar color-base">
             <div class="container-fluid">
                 <a class="navbar-brand " href="index.php">
-                    <img src="./images/logo.png" alt="Logo" width="30" height="24" class=" d-inline-block align-text-top ">
+                    <img src="./images/logo.png" alt="Logo" width="36" height="30" class=" d-inline-block align-text-top ">
 
                 </a>
                 <h4 class="logo">Pokedex:Gotta catch 'em all! </h4>

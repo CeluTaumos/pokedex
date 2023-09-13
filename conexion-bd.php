@@ -1,5 +1,7 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
+//CONSEJO DE AMIGO EL CHAT
+clearstatcache();
+
 //CONECTAR A BDD
 //ELIJO LA BDD QUE DESEO
 //$conexion = new mysqli("localhost", "root", "", "pokedex", 33067);
@@ -13,22 +15,18 @@ if ($conexion->connect_error) {
 //Enviar la instrucción SQL a la base de datos
 $sql = "select * from pokemon";
 
-
-
 $result = $conexion->query($sql);
-
-
-
-// Obtener y procesar los resultados
-
+//AGARRAR Y PROCESAR LOS RESULTADOS （；´д｀）ゞ
 $resultAsArray = $result->fetch_all(MYSQLI_ASSOC);
-$json_encode = json_encode($resultAsArray);  // Corrección en el nombre de la variable
+//INTENTAMOS ESTO Y NO FUNKA...
+//$json_encode = json_encode($resultAsArray);  // Corrección en el nombre de la variable
 
 
 foreach ($resultAsArray as $fila) {
 
-    echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " -Tipo:" . $fila["Tipo"] .
-        " -Imagen:" . $fila["Imagen"] .  "<br>";
+    echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
+    " - Imagen: <img src='" . $fila["Imagen"] . "' alt='tipo' width=100 height=100>" .  "<br>";
+
 }
 
 
