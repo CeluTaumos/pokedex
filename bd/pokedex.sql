@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `pokemon`
 --
-
+CREATE DATABASE pokedex;
+use pokedex;
 CREATE TABLE `pokemon` (
   `Numero` int(11) NOT NULL,
   `Nombre` varchar(30) NOT NULL,

@@ -70,20 +70,7 @@ if (isset($_POST["enviar"])) {
                 <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
             </form>
         </div>
-        <!-- GRILLA DE POKE-INFO -->
-        <div class="container text-center mt-3">
-            <div class="row">
-                <div class="col">
-                    Column
-                </div>
-                <div class="col">
-                    Column
-                </div>
-                <div class="col">
-                    Column
-                </div>
-            </div>
-        </div>
+  
     </main>
     <footer></footer>
 
