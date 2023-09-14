@@ -5,7 +5,7 @@ clearstatcache();
 //CONECTAR A BDD
 //ELIJO LA BDD QUE DESEO
 //$conexion = new mysqli("localhost", "root", "", "pokedex", 33067);
-$conexion = mysqli_connect("localhost:33067", "root", "", "pokedex");
+$conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
 if ($conexion->connect_error) {
     die("Error en conexion<br>");
 } else {
@@ -25,12 +25,23 @@ $resultAsArray = $result->fetch_all(MYSQLI_ASSOC);
 foreach ($resultAsArray as $fila) {
 
     echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
-    " - Imagen: <img src='" . $fila["Imagen"] . "' alt='tipo' width=100 height=100>" .  "<br>";
+    " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>" .  "<br>";
 
 }
+//Aca estaria la busqueda y filtrado de resultados
+$busqueda = $_POST['busqueda'];
+$sql = "SELECT * FROM pokemon WHERE Nombre LIKE '%$busqueda%'";
+$resultado = $conexion->query($sql);
 
-
-
-//Cerramos conexión a la abse de datos
+if ($resultado->num_rows > 0) {
+    while ($fila = $resultado->fetch_assoc()) {
+        // Imprime los resultados
+        echo "Resultado: " . $fila["Numero"] . " - Nombre: " . $fila['Nombre'] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
+        " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=100 height=100>" . "<br>";
+    }
+} else {
+    echo "No se encontraron resultados.";
+}
+//Cerramos conexión a la base de datos
 
 $conexion->close();

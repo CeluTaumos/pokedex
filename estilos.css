@@ -23,3 +23,9 @@ input {
     border: none;
 }
 /*Responsive*/
+@media (max-width: 767px) {
+    .mobile {
+        width: 80px;
+        height: 80px;
+    }
+}
