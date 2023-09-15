@@ -28,8 +28,8 @@ function mostrarTodaLaTablaPokedex($conexion)
         if (isset($_SESSION['user'])) {
             // Si la sesión está iniciada, muestra los botones de Modificar y Eliminar
            
-            echo"<form action='eliminar.php' method='post'><input type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='modificar'></form>";  
-            echo "<form action='eliminar.php' method='post' name='modificar'><input type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='{$fila['Numero']}'> </form>"; 
+            echo"<form action='index-logueado.php' method='post'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='modificar'>Eliminar</button></form>";  
+            echo "<form action='eliminar.php' method='post' name='modificar'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='modificar'>Modificar</button> </form>"; 
             }
     
             echo "<br>";

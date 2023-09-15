@@ -7,11 +7,11 @@ if (isset($_POST['busqueda'])) {
     $sql = "SELECT * FROM pokemon WHERE Nombre LIKE '%$busqueda%'OR Tipo LIKE '%$busqueda%' OR Numero LIKE '$busqueda'";
     $resultado = $conexion->query($sql);
 
-    if ($resultado->num_rows > 0) {
+    if ($resultado->num_rows > 1) {
         while ($fila = $resultado->fetch_assoc()) {
             // Imprime los resultados
             echo "Resultado: " . "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
-                " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=100 height=100>" . "<br>";
+                " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=100 height=100>" . "<button>Ver detalles</button>" ."<br>";
         }
     } else {
         echo "No se encontraron resultados.";
@@ -20,9 +20,14 @@ if (isset($_POST['busqueda'])) {
 } else {
     mostrarTodaLaTablaPokedex($conexion);
 }
+$eliminar= "";
 
+//Como obtener el valor del id del input
 if(isset($_POST['eliminar'])){
-    $sql="DELETE FROM pokemon WHERE Numero LIKE ''numero' ";
-    $conexion->query($sql);
+    $numero = $_POST['eliminar'];
+    $eliminar="DELETE FROM pokemon WHERE Numero LIKE ".$numero;
+    
+    $conexion->query($eliminar);
+
 }
 ?>

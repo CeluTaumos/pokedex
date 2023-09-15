@@ -58,6 +58,7 @@ session_start();
         <?php
         include_once("consultas.php");
         include_once('conexion-bd.php');
+        include_once("eliminar.php");
         //echo "La conexion tiene " . var_dump($conexion);
         //mostrarTodaLaTablaPokedex($conexion);
         ?>
