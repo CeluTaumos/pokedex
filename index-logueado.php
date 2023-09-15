@@ -48,8 +48,8 @@ session_start();
             ?>
         </div>
         <div class="mt-3">
-            <form class="d-flex" role="search" method="POST" action="index-logueado.php">
-                <input name="busqueda" class="form-control me-2" type="search" placeholder="Ingrese el nombre,tipo o número de Pókemon" aria-label="Search">
+            <form class="d-flex" role="search" method="POST" action="consultas.php">
+                <input name="busqueda" class="form-control me-2" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
             </form>
             
