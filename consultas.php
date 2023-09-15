@@ -4,7 +4,7 @@ include_once("conexion-bd.php");
 if (isset($_POST['busqueda'])) {
 
     $busqueda = $_POST['busqueda'];
-    $sql = "SELECT * FROM pokemon WHERE Nombre LIKE '%$busqueda%'OR Tipo LIKE '%$busqueda%' OR Numero LIKE '%$busqueda%'";
+    $sql = "SELECT * FROM pokemon WHERE Nombre LIKE '%$busqueda%'OR Tipo LIKE '%$busqueda%' OR Numero LIKE '$busqueda'";
     $resultado = $conexion->query($sql);
 
     if ($resultado->num_rows > 0) {
