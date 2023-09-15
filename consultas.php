@@ -21,5 +21,8 @@ if (isset($_POST['busqueda'])) {
     mostrarTodaLaTablaPokedex($conexion);
 }
 
-if(isset($_POST))
+if(isset($_POST['eliminar'])){
+    $sql="DELETE FROM pokemon WHERE Numero LIKE ''numero' ";
+    $conexion->query($sql);
+}
 ?>
