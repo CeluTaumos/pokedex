@@ -13,17 +13,13 @@ if ($conexion->connect_error) {
 }
 function mostrarTodaLaTablaPokedex($conexion)
 {
-
     //Enviar la instrucción SQL a la base de datos
     $sql = "select * from pokemon";
-
     $result = $conexion->query($sql);
     //AGARRAR Y PROCESAR LOS RESULTADOS （；´д｀）ゞ
     $resultAsArray = $result->fetch_all(MYSQLI_ASSOC);
     //INTENTAMOS ESTO Y NO FUNKA...
     //$json_encode = json_encode($resultAsArray);  // Corrección en el nombre de la variable
-
-
     foreach ($resultAsArray as $fila) {
 
         echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
