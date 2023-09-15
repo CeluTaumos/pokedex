@@ -21,5 +21,5 @@ if (isset($_POST['busqueda'])) {
     mostrarTodaLaTablaPokedex($conexion);
 }
 
-
+if(isset($_POST))
 ?>
