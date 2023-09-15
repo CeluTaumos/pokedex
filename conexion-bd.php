@@ -23,9 +23,16 @@ function mostrarTodaLaTablaPokedex($conexion)
     foreach ($resultAsArray as $fila) {
 
         echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
-            " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>" . "<br>";
-
-    }
+        " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>";
+        // Verifica si la sesión está iniciada
+        if (isset($_SESSION['user'])) {
+            // Si la sesión está iniciada, muestra los botones de Modificar y Eliminar
+            echo "<input type='submit' id='{$fila['Numero']}' value='Modificar'>";  
+            echo "<input type='submit' id='{$fila['Numero']}' value='Eliminar'>"; 
+            }
+    
+            echo "<br>";
+        }
 }
 
 //Cerramos conexión a la base de datos
