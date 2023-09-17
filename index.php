@@ -17,8 +17,10 @@ if (isset($_POST["enviar"])) {
         exit();
     } else {
         $error = "user o clave erroneos";
+        session_destroy();
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -71,9 +73,11 @@ if (isset($_POST["enviar"])) {
                
             </form>
         </div>
-
+        
         <?php
-        include_once('consultas.php');
+            include_once('consultas.php');
+            //mostrarTablaPokedex($conexion);
+            
         ?>
   
     </main>

@@ -31,12 +31,37 @@ if (isset($_POST['busqueda'])) {
 }
 $eliminar = "";
 
-//Como obtener el valor del id del input
+//Usa el valor de id del input para eliminar
 if (isset($_POST['eliminar'])) {
     $numero = $_POST['eliminar'];
     $eliminar = "DELETE FROM pokemon WHERE Numero LIKE " . $numero;
 
     $conexion->query($eliminar);
+    //header("Location: index-logueado.php");
+    //exit;
 
 }
+//Modificar
+/*
+if (isset($_POST['modificar'])) {
+    $elegido = $_POST['modificar'];
+    //$eliminar = "DELETE FROM pokemon WHERE Numero LIKE " . $numero;
+    echo "<form method='post' action='cambiar.php'><input type='number' name='' placeholder='Ingrese el numero nuevo'><input type='text' name='' placeholder='Ingrese el nuevo nombre'><input type='file' placeholder='Tipo' name=''><input type='file' name='' placeholder='Imagen nueva'></form>";
+    //$conexion->query($elegido);
+    header("Location: index-logueado.php");
+    exit;
+}*/
+/** 
+function mostrarTablaPokedex($conexion){
+    //Enviar la instrucción SQL a la base de datos
+    $sql = "select * from pokemon";
+    $result = $conexion->query($sql);
+    //AGARRAR Y PROCESAR LOS RESULTADOS （；´д｀）ゞ
+    $resultAsArray = $result->fetch_all(MYSQLI_ASSOC);
+    foreach ($resultAsArray as $fila) {
+
+        echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
+" - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height> <br>";
+}
+}*/
 ?>

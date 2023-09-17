@@ -17,7 +17,6 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <title>Pokedex-inicio</title>
 </head>
-
 <body>
     <header>
         <!-- LOGO Y TÍTULO -->
@@ -34,32 +33,6 @@ session_start();
 
     </header>
     <main class="container">
-        <!-- BUSCADOR -->
-        <div class="mt-3">
-            <?php
-            if (isset($_SESSION["user"])) {
-                echo "bienvenido cazador " . $_SESSION["user"] . " ¡atrápalos a todos!";
-            } else {
-                session_destroy();
-                header("location: index.php");
-                exit();
-            }
-
-            ?>
-        </div>
-        <div class="mt-3">
-            <form class="d-flex" role="search" method="POST" action="index-logueado.php">
-                <input name="busqueda" class="form-control me-2" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
-            </form>
-            
-        </div>
-        <!-- GRILLA DE POKE-INFO -->
-        <?php
-        include_once("consultas.php");
-        include_once('conexion-bd.php');
-        ?>
-       
     </main>
     <footer></footer>
 

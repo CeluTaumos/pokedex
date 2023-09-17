@@ -4,7 +4,7 @@ clearstatcache();
 
 //CONECTAR A BDD
 //ELIJO LA BDD QUE DESEO
-//$conexion = new mysqli("localhost", "root", "", "pokedex", 33067);
+
 $conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
 if ($conexion->connect_error) {
     die("Error en conexion<br>");
@@ -25,13 +25,12 @@ function mostrarTodaLaTablaPokedex($conexion)
         echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
         " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>";
         // Verifica si la sesión está iniciada
-        if (isset($_SESSION['user'])) {
+        if (isset($_SESSION['user']) && strpos($_SERVER['REQUEST_URI'], 'index-logueado.php') !== false) {
             // Si la sesión está iniciada, muestra los botones de Modificar y Eliminar
-           
             echo"<form action='index-logueado.php' method='post'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='modificar'>Eliminar</button></form>";  
-            echo "<form action='eliminar.php' method='post' name='modificar'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='modificar'>Modificar</button> </form>"; 
+            echo "<form action='cambiar.php' method='post'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='modificar'>Modificar</button> </form>"; 
             }
-    
+            //<a href='cambiar.php'></a>
             echo "<br>";
         }
 }
