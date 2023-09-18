@@ -3,7 +3,8 @@ CREATE DATABASE Pokedex;
 use Pokedex;
 
 -- creo la tabla
-CREATE TABLE Pokemon (
+CREATE TABLE pokemon (
+  id INT AUTO_INCREMENT PRIMARY KEY,
   Numero INT(151) NOT NULL,
   Nombre varchar(30) NOT NULL,
   Descripcion varchar(150) NOT NULL,

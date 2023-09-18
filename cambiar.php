@@ -1,7 +1,9 @@
+
 <?php
     $conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
     $id =''; 
     ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <title>Pokedex-inicio</title>
 </head>
+
 <body>
     <header>
         <!-- LOGO Y TÍTULO -->
@@ -31,6 +34,7 @@
 
     </header>
     <main class="container">
+<<<<<<< HEAD
     <!--Form que guarda los datos del pokemon elegido y lo guarda en una varible para modificarlo en la bd-->
     <?php
     if (isset($_GET['id'])) {
@@ -51,11 +55,13 @@
     
     
 ?>
+
         <form action="cambiar.php" method="post">
             <select name="ultimoid">
                 <option value="<?php echo $ultimoid; ?>"><?php echo $ultimoid; ?></option>
             </select>
             
+
             <input type="text" placeholder="<?php echo $numero; ?>" name="nuevo_numero">
             <input type="text" placeholder="<?php echo $nombre; ?>" name="nuevo_nombre">
             <input type="file" name="tipo">
@@ -63,20 +69,21 @@
             <input type="submit" value="Enviar" name="enviar">
         </form>
         <?php
+
         
         if (isset($_POST['ultimoid'])) {
             $ultimoid= $_POST['ultimoid'];
-            echo " aaaa" . $ultimoid;
+
+       
         }
         //recibir los datos del poke y imprimirlos de placeholder para mostrarlos
         //despues al modificar redirigir al index-logueado
 
         if (isset($_POST['nuevo_numero'])) {
             $nuevo_numero = $_POST['nuevo_numero'];
-            
-            // $ultimoid= $_POST['id'];
+           
         }
-        //echo "el valor es" . global $id;
+        
         if (isset($_POST['nuevo_nombre'])) {
             $nuevo_nombre = $_POST['nuevo_nombre'];
             
@@ -94,8 +101,10 @@
                 $conexion->query($cambio);
                 header("Location: index-logueado.php");
                 exit;
-            
         }
+
+       
+        
         ?>
     </main>
     <footer></footer>
