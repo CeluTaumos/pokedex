@@ -34,6 +34,7 @@ session_start();
 
     </header>
     <main class="container">
+        <h1 class="mt-4 fw-bold">Pókedex</h1>
         <!-- BUSCADOR -->
         <div class="mt-3">
             <?php
@@ -52,14 +53,15 @@ session_start();
                 <input name="busqueda" class="form-control me-2" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
             </form>
-            
+
         </div>
         <!-- GRILLA DE POKE-INFO -->
+        <span class="border-top border-5 border-primary">
         <?php
         include_once("consultas.php");
         include_once('conexion-bd.php');
         ?>
-       
+   </span>
     </main>
     <footer></footer>
 

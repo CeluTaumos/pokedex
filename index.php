@@ -40,19 +40,19 @@ if (isset($_POST["enviar"])) {
 <body>
     <header>
         <!-- LOGO Y TÍTULO -->
-        <nav class="navbar color-base">
-            <div class="container-fluid">
+        <nav class="navbar color-base ">
+            <div class="container-fluid float-sm-end">
                 <a class="navbar-brand " href="index.php">
                     <img src="./images/logo.png" alt="Logo" width="36" height="30" class=" d-inline-block align-text-top ">
 
                 </a>
-                <h4 class="logo">Pokedex:Gotta catch 'em all! </h4>
+                <h4 class="logo">Pokédex:Gotta catch 'em all! </h4>
 
                 <!-- INPUTS - BARRITA LOGGIN -->
                 <form action="index.php" method="post">
-                    <div class="input-group ">
+                    <div class="input-group float-sm-end">
                         <input type="text" placeholder="Ingrese su usuario ^_^" class="ms-2 " name="user">
-                        <input type="password" placeholder="Ingrese su contraseña :P" class="ms-2"name="pw">
+                        <input type="password" placeholder="Ingrese su contraseña :P" class="ms-2" name="pw">
                         <input type="submit" value="GOTTCHA!" class="ms-2" name="enviar">
                     </div>
                 </form>
@@ -65,21 +65,22 @@ if (isset($_POST["enviar"])) {
 
     </header>
     <main class="container">
+        <h1 class="mt-4 fw-bold">Pókedex</h1>
         <!-- BUSCADOR -->
         <div class="mt-3">
             <form class="d-flex" role="search" method="POST" action="index.php">
                 <input class="form-control me-2" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search" name="busqueda">
                 <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
-               
+
             </form>
         </div>
-        
-        <?php
+        <span class="border-top border-5 border-primary">
+            <?php
             include_once('consultas.php');
             //mostrarTablaPokedex($conexion);
-            
-        ?>
-  
+            ?>
+       </span>
+
     </main>
     <footer></footer>
 

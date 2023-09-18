@@ -4,12 +4,12 @@ clearstatcache();
 
 //CONECTAR A BDD
 //ELIJO LA BDD QUE DESEO
-
+//$conexion = new mysqli("localhost", "root", "", "pokedex", 33067);
 $conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
 if ($conexion->connect_error) {
     die("Error en conexion<br>");
 } else {
-    echo "Conexion exitosa!<br>";
+    echo "<div class='mt-3'>" . "Conexion exitosa!<br>" . "</div>";
 }
 function mostrarTodaLaTablaPokedex($conexion)
 {
@@ -23,16 +23,17 @@ function mostrarTodaLaTablaPokedex($conexion)
     foreach ($resultAsArray as $fila) {
 
         echo "Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
-        " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>";
+            " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>";
         // Verifica si la sesión está iniciada
-        if (isset($_SESSION['user']) && strpos($_SERVER['REQUEST_URI'], 'index-logueado.php') !== false) {
+        if (isset($_SESSION['user'])) {
             // Si la sesión está iniciada, muestra los botones de Modificar y Eliminar
-            echo"<form action='index-logueado.php' method='post'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='modificar'>Eliminar</button></form>";  
-            echo "<form action='cambiar.php' method='post'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='modificar'>Modificar</button> </form>"; 
-            }
-            //<a href='cambiar.php'></a>
-            echo "<br>";
+
+            echo "<form action='index' method='post' name='eliminar'><input type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='modificar'></form>";
+            echo "<form action='consultas.php' method='post' name='modificar'><input type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar'> </form>";
         }
+
+        echo "<br>";
+    }
 }
 
 //Cerramos conexión a la base de datos
