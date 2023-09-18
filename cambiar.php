@@ -3,8 +3,6 @@
     $conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
     $id =''; 
     ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,7 +32,6 @@
 
     </header>
     <main class="container">
-<<<<<<< HEAD
     <!--Form que guarda los datos del pokemon elegido y lo guarda en una varible para modificarlo en la bd-->
     <?php
     if (isset($_GET['id'])) {
@@ -57,11 +54,10 @@
 ?>
 
         <form action="cambiar.php" method="post">
+            <!--Select que pasa el id-->
             <select name="ultimoid">
                 <option value="<?php echo $ultimoid; ?>"><?php echo $ultimoid; ?></option>
             </select>
-            
-
             <input type="text" placeholder="<?php echo $numero; ?>" name="nuevo_numero">
             <input type="text" placeholder="<?php echo $nombre; ?>" name="nuevo_nombre">
             <input type="file" name="tipo">
@@ -88,7 +84,7 @@
             $nuevo_nombre = $_POST['nuevo_nombre'];
             
         }
-
+        //Si estan con datos los input actualiza los campos respectivos
         if (isset($_POST['nuevo_numero']) || isset($_POST['nuevo_nombre'])) {
             
                 $cambio = "UPDATE pokemon SET Numero = '$nuevo_numero' WHERE id =" .$ultimoid;
@@ -99,6 +95,7 @@
                 $cambio = "UPDATE pokemon SET Nombre = '$nuevo_nombre' WHERE id = '$ultimoid'";
                 echo "Consulta SQL: " . $cambio;
                 $conexion->query($cambio);
+                //Despues de la query redirige al index-logueado
                 header("Location: index-logueado.php");
                 exit;
         }
