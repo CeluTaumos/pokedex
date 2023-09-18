@@ -56,12 +56,12 @@ session_start();
 
         </div>
         <!-- GRILLA DE POKE-INFO -->
-        <span class="border-top border-5 border-primary">
+
         <?php
         include_once("consultas.php");
         include_once('conexion-bd.php');
         ?>
-   </span>
+ 
     </main>
     <footer></footer>
 

@@ -74,12 +74,12 @@ if (isset($_POST["enviar"])) {
 
             </form>
         </div>
-        <span class="border-top border-5 border-primary">
+        
             <?php
             include_once('consultas.php');
             //mostrarTablaPokedex($conexion);
             ?>
-       </span>
+    
 
     </main>
     <footer></footer>
