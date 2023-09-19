@@ -24,7 +24,7 @@ function mostrarTodaLaTablaPokedex($conexion)
     foreach ($resultAsArray as $fila) {
 
         echo "<div class='border border-3 border-primary mb-4'>"."Numero: " . $fila["Numero"] . " - Nombre: " . $fila["Nombre"] . " - Tipo: <img src='" . $fila["Tipo"] . "' alt='tipo' width=30 height=24>" .
-            " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>";
+            " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=80 height=80>" ."</div>";
         // Verifica si la sesión está iniciada
         if (isset($_SESSION['user']) && strpos($_SERVER['REQUEST_URI'], 'index-logueado.php') !== false) {
             // Si la sesión está iniciada, muestra los botones de Modificar y Eliminar
