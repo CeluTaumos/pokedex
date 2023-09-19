@@ -32,8 +32,8 @@ function mostrarTodaLaTablaPokedex($conexion)
             // Si la sesión está iniciada, muestra los botones de Modificar y Eliminar
 
             echo"<form action='index-logueado.php' method='post'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='Eliminar'>Eliminar</button></form>";
-            echo "<a href='cambiar.php'&numero={$fila['Numero']}&nombre={$fila['Nombre']}'><button type='button' id='{$fila['Numero']}' name='modificar' placeholder='Modificar'>Modificar</button></a>
-            ";
+            echo "<a href='cambiar.php?id={$fila['id']}&numero={$fila['Numero']}&nombre={$fila['Nombre']}'><button type='button' id='{$fila['Numero']}' name='modificar' placeholder='Modificar'>Modificar</button></a>";
+
             }
 
             echo "<br>";
