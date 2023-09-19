@@ -56,6 +56,7 @@ $id = '';
             </select>
             <p>Fotito del Pokemon : <input type="file" name='imagen'></p>
             <input type="submit" value="Enviar" name="enviar" class="btn btn-warning">
+            <button class="btn btn-warning "><a href="index-logueado.php" class="link-offset-2 link-underline link-underline-opacity-0">ME ARREPENTÍ</a></button>
         </form>
     </main>
 
@@ -122,6 +123,7 @@ if (isset($_POST['nuevo_numero']) || isset($_POST['nuevo_nombre']) || isset($_PO
     exit;
     $conexion->close();
 }
+
 
 
 
