@@ -29,8 +29,8 @@ function mostrarTodaLaTablaPokedex($conexion)
         if (isset($_SESSION['user']) && strpos($_SERVER['REQUEST_URI'], 'index-logueado.php') !== false) {
             // Si la sesión está iniciada, muestra los botones de Modificar y Eliminar
             
-            echo "<span class='border d-inline'>"."<form action='index-logueado.php' method='post'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='Eliminar' class='d-inline btn btn-info mb-3'>Eliminar-- doble click</button></form>";
-            echo  "<a href='cambiar.php?id={$fila['id']}&numero={$fila['Numero']}&nombre={$fila['Nombre']}'><button type='button' id='{$fila['Numero']}' name='modificar' placeholder='Modificar' class='d-inline btn btn-success mb-3'>Modificar</button></a>"."</span>"."</div>";
+            echo "<form action='index-logueado.php' method='post' class='container d-inline'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='Eliminar' class='d-inline btn btn-info mb-3'>Eliminar-- doble click</button></form>";
+            echo  "<a href='cambiar.php?id={$fila['id']}&numero={$fila['Numero']}&nombre={$fila['Nombre']}'><button type='button' id='{$fila['Numero']}' name='modificar' placeholder='Modificar' class='d-inline btn btn-success mb-3'>Modificar</button></a>"."</div>";
 
             }
 
