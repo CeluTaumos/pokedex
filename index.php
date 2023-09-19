@@ -66,10 +66,11 @@ if (isset($_POST["enviar"])) {
     </header>
     <main class="container">
         <h1 class="mt-4 fw-bold">Pókedex</h1>
+        <small>El user es : mica -- La contra es : 123</small>
         <!-- BUSCADOR -->
         <div class="mt-3">
             <form class="d-flex" role="search" method="POST" action="index.php">
-                <input class="form-control me-2" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search" name="busqueda">
+                <input class="form-control mb-3" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search" name="busqueda">
                 <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
 
             </form>

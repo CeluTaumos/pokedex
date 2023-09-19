@@ -34,7 +34,7 @@ $id = '';
 
     </header>
     <main class="container">
-        <h2  class="mt-4 fw-bold">Agregar un nuevo Pokemon</h2>
+        <h2 class="mt-4 fw-bold">Agregar un nuevo Pokemon</h2>
         <form action="agregar-poke.php" method="post" enctype="multipart/form-data">
             <!--Select que pasa el id-->
 

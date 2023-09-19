@@ -6,11 +6,10 @@ clearstatcache();
 //CONECTAR A BDD
 //ELIJO LA BDD QUE DESEO
 $conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
-if ($conexion->connect_error) {
-    die("Error en conexion<br>");
-} else {
-    echo "<div class='mt-3'>" . "Conexion exitosa!<br>" . "</div>";
-}
+// if ($conexion->connect_error) {
+//     die("Error en conexion<br>");
+// } else {
+//     echo "<div class='mt-3'>" . "Conexion exitosa!<br>" . "</div>";}
 
 
 function mostrarTodaLaTablaPokedex($conexion)
