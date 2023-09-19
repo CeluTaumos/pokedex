@@ -1,8 +1,7 @@
-
 <?php
-    $conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
-    $id =''; 
-    ?>
+$conexion = mysqli_connect("localhost: 33067", "root", "", "pokedex");
+$id = '';
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,26 +31,26 @@
 
     </header>
     <main class="container">
-    <!--Form que guarda los datos del pokemon elegido y lo guarda en una varible para modificarlo en la bd-->
-    <?php
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        //echo "el valor es" . $id;
-    }
-    //$id = $_GET['id'];
-    if (isset($_GET['numero'])) {
-        $numero = $_GET['numero'];
-        //echo "el valor es" . $numero;
-    }
-    // Verificar si se ha pasado un nombre a través de GET
-    if (isset($_GET['nombre'])) {
-        $nombre = $_GET['nombre'];
-        //echo "el valor es" . $nombre;
-    }
-    $ultimoid =$id;
-    
-    
-?>
+        <!--Form que guarda los datos del pokemon elegido y lo guarda en una varible para modificarlo en la bd-->
+        <?php
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            //echo "el valor es" . $id;
+        }
+        //$id = $_GET['id'];
+        if (isset($_GET['numero'])) {
+            $numero = $_GET['numero'];
+            //echo "el valor es" . $numero;
+        }
+        // Verificar si se ha pasado un nombre a través de GET
+        if (isset($_GET['nombre'])) {
+            $nombre = $_GET['nombre'];
+            //echo "el valor es" . $nombre;
+        }
+        $ultimoid = $id;
+
+
+        ?>
 
         <form action="cambiar.php" method="post" enctype="multipart/form-data">
             <!--Select que pasa el id-->
@@ -66,9 +65,9 @@
         </form>
         <?php
 
-        
+
         if (isset($_POST['ultimoid'])) {
-            $ultimoid= $_POST['ultimoid'];
+            $ultimoid = $_POST['ultimoid'];
         }
         //recibir los datos del poke y imprimirlos de placeholder para mostrarlos
         //despues al modificar redirigir al index-logueado
@@ -81,56 +80,56 @@
 
         //Si estan con datos los input actualiza los campos respectivos
         if (isset($_POST['nuevo_numero']) || isset($_POST['nuevo_nombre']) || isset($_POST['imagen']) || isset($_POST['tipo'])) {
-            
-                $cambio = "UPDATE pokemon SET Numero = '$nuevo_numero' WHERE id =" .$ultimoid;
-                echo "Consulta SQL: " . $cambio;
-                $conexion->query($cambio);
-            
-                //UPDATE pokemon SET Nombre = "POKOCHO" WHERE id = 25;
-                $cambio = "UPDATE pokemon SET Nombre = '$nuevo_nombre' WHERE id = '$ultimoid'";
-                //echo "Consulta SQL: " . $cambio;
-                $conexion->query($cambio);
-                $rutaImagenTipo = '';
-                $rutaPokeTipo = '';
 
-                //Envio de imagen del pokemon
-                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagen"])) {
-                    $nombreArchivo = $_FILES["imagen"]["name"];
-                    $tipoArchivo = $_FILES["imagen"]["type"];
-                    $tamanoArchivo = $_FILES["imagen"]["size"];
-                    $rutaTemporal = $_FILES["imagen"]["tmp_name"];
+            $cambio = "UPDATE pokemon SET Numero = '$nuevo_numero' WHERE id =" . $ultimoid;
+            echo "Consulta SQL: " . $cambio;
+            $conexion->query($cambio);
 
-                    $directorioDestino = "bd/foto/" . $nombreArchivo;
-                    if (move_uploaded_file($rutaTemporal, $directorioDestino)) {
-                        $sql = "UPDATE Pokemon SET Imagen = '$directorioDestino' WHERE ID = $ultimoid";
-                        if ($conexion->query($sql) === TRUE) {
-                            echo "Imagen subida y ruta actualizada en la base de datos con éxito.";
-                        } else {
-                            echo "Error al actualizar la ruta en la base de datos: " . $conexion->error;
-                        }
-                    }   
-                }  
-                //Envio de imagen del tipo
-                if ($_FILES["tipo"]["size"] > 0) {
-                    $nombreArchivoTipo = $_FILES["tipo"]["name"];
-                    $rutaTemporalTipo = $_FILES["tipo"]["tmp_name"];
-                    $directorioDestinoTipo = "bd/tipos/" . $nombreArchivoTipo;
-            
-                    if (move_uploaded_file($rutaTemporalTipo, $directorioDestinoTipo)) {
-                        $sql = "UPDATE Pokemon SET Tipo = '$directorioDestinoTipo' WHERE ID = $ultimoid";
-                        if ($conexion->query($sql) === TRUE) {
-                            echo "Imagen del tipo subida y ruta actualizada en la base de datos con éxito.";
-                        }
+            //UPDATE pokemon SET Nombre = "POKOCHO" WHERE id = 25;
+            $cambio = "UPDATE pokemon SET Nombre = '$nuevo_nombre' WHERE id = '$ultimoid'";
+            //echo "Consulta SQL: " . $cambio;
+            $conexion->query($cambio);
+            $rutaImagenTipo = '';
+            $rutaPokeTipo = '';
+
+            //Envio de imagen del pokemon
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagen"])) {
+                $nombreArchivo = $_FILES["imagen"]["name"];
+                $tipoArchivo = $_FILES["imagen"]["type"];
+                $tamanoArchivo = $_FILES["imagen"]["size"];
+                $rutaTemporal = $_FILES["imagen"]["tmp_name"];
+
+                $directorioDestino = "bd/foto/" . $nombreArchivo;
+                if (move_uploaded_file($rutaTemporal, $directorioDestino)) {
+                    $sql = "UPDATE Pokemon SET Imagen = '$directorioDestino' WHERE ID = $ultimoid";
+                    if ($conexion->query($sql) === TRUE) {
+                        echo "Imagen subida y ruta actualizada en la base de datos con éxito.";
+                    } else {
+                        echo "Error al actualizar la ruta en la base de datos: " . $conexion->error;
                     }
                 }
-            
-                //Despues de la query redirige al index-logueado
-                header("Location: index-logueado.php");
-                exit;
+            }
+            //Envio de imagen del tipo
+            if ($_FILES["tipo"]["size"] > 0) {
+                $nombreArchivoTipo = $_FILES["tipo"]["name"];
+                $rutaTemporalTipo = $_FILES["tipo"]["tmp_name"];
+                $directorioDestinoTipo = "bd/tipos/" . $nombreArchivoTipo;
+
+                if (move_uploaded_file($rutaTemporalTipo, $directorioDestinoTipo)) {
+                    $sql = "UPDATE Pokemon SET Tipo = '$directorioDestinoTipo' WHERE ID = $ultimoid";
+                    if ($conexion->query($sql) === TRUE) {
+                        echo "Imagen del tipo subida y ruta actualizada en la base de datos con éxito.";
+                    }
+                }
+            }
+
+            //Despues de la query redirige al index-logueado
+            header("Location: index-logueado.php");
+            exit;
         }
 
-       
-        
+
+
         ?>
     </main>
     <footer></footer>

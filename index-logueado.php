@@ -5,6 +5,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,13 +56,18 @@ session_start();
 
         </div>
         <!-- GRILLA DE POKE-INFO -->
-
+        <div class="mt-3">
+            <form action="agregar-poke.php" method="post">
+                <button class="btn btn-outline-success" type="submit">Agregar Pokemon</button>
+            </form>
+        </div>
         <?php
         include_once("consultas.php");
+
         include_once('conexion-bd.php');
-        
+
         ?>
- 
+
     </main>
     <footer></footer>
 
