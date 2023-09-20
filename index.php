@@ -5,7 +5,6 @@ $error = "";
 // si esta apretado el boton d enviar
 if (isset($_POST["enviar"])) {
 
-
     if ($_POST["user"] == "mica" && $_POST["pw"] == 123) {
 
         $_SESSION["user"] = $_POST["user"];
@@ -38,6 +37,7 @@ if (isset($_POST["enviar"])) {
 </head>
 
 <body>
+    
     <header>
         <!-- LOGO Y TÍTULO -->
         <nav class="navbar color-base ">
@@ -69,11 +69,11 @@ if (isset($_POST["enviar"])) {
         <small>El user es : mica -- La contra es : 123</small>
         <!-- BUSCADOR -->
         <div class="mt-3">
-            <form class="d-flex" role="search" method="POST" action="index.php">
-                <input class="form-control mb-3" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search" name="busqueda">
-                <button class="btn btn-outline-success" type="submit">¿Quién es ese Pókemon?</button>
-
+            <form class="d-flex" role="search" method="POST" action="index-logueado.php">
+                <input name="busqueda" class="form-control me-2" type="search" placeholder="Ingrese el nombre, tipo o número de Pókemon" aria-label="Search">
+                <button class="btn btn-outline-warning" type="submit">¿Quién es ese Pókemon?</button>
             </form>
+
         </div>
         
             <?php
@@ -83,7 +83,7 @@ if (isset($_POST["enviar"])) {
     
 
     </main>
-    <footer></footer>
+    <footer> Celena Moscovich - Axel Leguero - Micaela Zara - Ludmila Pereyra</footer>
 
     <!-- BOOSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

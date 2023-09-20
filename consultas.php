@@ -14,6 +14,7 @@ if (isset($_POST['busqueda'])) {
                 " - Imagen: <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=100 height=100>" .
                 "<form action='ver-detalle.php' method='POST'><button name='detalle' value='" . $fila["Numero"] . "'>Ver detalles</button></form>" . "</div>";
         }
+        echo "</div>";
     } else if ($resultado->num_rows == 1) {
         while ($fila = $resultado->fetch_assoc()) {
 

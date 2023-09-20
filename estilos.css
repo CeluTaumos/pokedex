@@ -1,6 +1,10 @@
-*{
+* {
     font-family: 'Fjalla One', sans-serif;
     box-sizing: border-box;
+}  
+
+body{
+    cursor: url('https://i.pinimg.com/564x/be/8c/3a/be8c3ac4223718dd2569798f2aad46cc.jpg');
 }
 
 
@@ -11,17 +15,22 @@
 }
 
 @font-face {
-    font-family: 'Pokemon'; /* Nombre de la fuente que deseas utilizar */
-    src: url('./fonts/poke-font.ttf') format('woff'); /* Ruta a tu fuente y formato */
+    font-family: 'Pokemon';
+    /* Nombre de la fuente que deseas utilizar */
+    src: url('./fonts/poke-font.ttf') format('woff');
+    /* Ruta a tu fuente y formato */
     /* Puedes agregar más formatos de fuente aquí si tienes diferentes versiones (woff, woff2, ttf, etc.) */
-  }
-.logo{
-    font-family: 'Pokemon',sans-serif;
 }
+
+.logo {
+    font-family: 'Pokemon', sans-serif;
+}
+
 input {
-    background-color: aliceblue; 
+    background-color: aliceblue;
     border: none;
 }
+
 /*R.E.S.P.O.S.I.V.E*/
 @media (max-width: 767px) {
     .mobile {
@@ -30,29 +39,88 @@ input {
     }
 }
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     input[type="text"]::placeholder {
-       
+
         font-size: 0.800em;
-        
+
     }
-    .logo{
+
+    .logo {
         font-size: 0.875em;
     }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     input[type="text"]::placeholder {
-     
+
         font-size: 1.125em;
-       
+
     }
-    .logo{
+
+    .logo {
         font-size: 1.125em;
     }
 }
 
+.grid-t {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+    text-align: center;
+    font-size: 20px;
+
+    
+}
+
+.grid-i {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 200px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.grid {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.grid-item {
+    background-color: #4e4b5e;
+    color: #fff;
+    padding: 10px;
+
+}
+
+.grid img {
+    margin: auto;
+}
+
+.dato {
+    padding: 10px;
+    align-items: center;
+}
 
 
-
-
+footer{
+    background-color: #444;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-weight: lighter;
+}
