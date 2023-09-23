@@ -47,13 +47,13 @@ if(isset($_POST['detalle'])){
 
     while ($fila = $pokemon_detalle->fetch_assoc()) {
 
-        echo "<section style='display: flex'> <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=350 height=350>
-        <div> <h1>".$fila["Nombre"]."</h1>  <p>".$fila["Descripcion"]."</p> </div> </section>";
+        echo "<section class='detalles' style='display: flex'> <img class='mobile' src='" . $fila["Imagen"] . "' alt='tipo' width=350 height=350>
+        <div> <h1>#" . $fila["Numero"] . " " . $fila["Nombre"]."</h1>  <p>".$fila["Descripcion"]."</p> </div> </section>";
     }
 }
 
 ?>
-
+  <a id="volv" href="index-logueado.php" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">volver</a>
 </main>
 <footer> Celena Moscovich - Axel Leguero - Micaela Zara - Ludmila Pereyra</footer>
 

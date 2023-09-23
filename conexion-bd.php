@@ -38,7 +38,7 @@ function mostrarTodaLaTablaPokedex($conexion)
 
             echo "<div class='dato'><a href='cambiar.php?id={$fila['id']}&numero={$fila['Numero']}&nombre={$fila['Nombre']}' class='link-offset-2 link-underline link-underline-opacity-0'><button type='button' id='{$fila['Numero']}' name='modificar' placeholder='Modificar' class='d-inline btn btn-outline-primary'>Modificar</button></a>" . "</div>";
 
-            echo "<form class='dato' action='index-logueado.php' method='post' class='container d-inline'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='Eliminar' class='d-inline btn btn-outline-danger mb-3'>Eliminar-- doble click</button></form>";
+            echo "<form class='dato' action='index-logueado.php' method='post' class='container d-inline'><button type='submit' id='{$fila['Numero']}' value='{$fila['Numero']}' name='eliminar' placeholder='Eliminar' class='d-inline btn btn-outline-danger mb-3'>Eliminar -- doble click</button></form>";
             
         } else{
             echo "<div class='grid'><div class='dato'>" . $fila["Numero"] . "</div> <div class='dato'> " . $fila["Nombre"] . " </div><div class='dato'><img src='" . $fila["Tipo"] . "' alt='tipo' width=40 height=40>" .

@@ -33,14 +33,14 @@ $id = '';
         </nav>
 
     </header>
-    <main class="container">
+    <main class="container" style='height:500px;'>
         <h2 class="mt-4 fw-bold">Agregar un nuevo Pokemon</h2>
         <form action="agregar-poke.php" method="post" enctype="multipart/form-data">
             <!--Select que pasa el id-->
 
-            <input type="text" placeholder="PokeNumero" name="nuevo_numero" class="mb-3">
-            <input type="text" placeholder="PokeNombre" name="nuevo_nombre" class="mb-3">
-            <select name="tipo" id="tipo">
+           <label for="">Numero</label> <input type="text" id="numero" placeholder="PokeNumero" name="nuevo_numero" class="mb-3">
+         <br><label for="nombre">Nombre</label>   <input type="text" placeholder="PokeNombre" id="nombre" name="nuevo_nombre" class="mb-3">
+         <br><label for="tipo">De que tipo es?</label>   <select name="tipo" id="tipo">
                 <option value="bd/tipos/fuego.png">fuego</option>
                 <option value="bd/tipos/agua.png">agua</option>
                 <option value="bd/tipos/electrico.png">electrico</option>
@@ -54,9 +54,10 @@ $id = '';
                 <option value="bd/tipos/planta.png">planta</option>
 
             </select>
-            <p>Fotito del Pokemon : <input type="file" name='imagen'></p>
-            <input type="submit" value="Enviar" name="enviar" class="btn btn-warning">
-            <button class="btn btn-warning "><a href="index-logueado.php" class="link-offset-2 link-underline link-underline-opacity-0">ME ARREPENTÍ</a></button>
+            <br><br><p>Fotito del Pokemon: <input type="file" name='imagen'></p>
+            <input type="submit" value="Enviar" name="enviar"  id="env">
+            <a href="index-logueado.php" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">ME
+                ARREPENTÍ</a>
         </form>
     </main>
     <footer> Celena Moscovich - Axel Leguero - Micaela Zara - Ludmila Pereyra</footer>

@@ -88,6 +88,7 @@ input {
     margin-bottom: 5px;
 }
 
+
 .grid {
     margin: auto;
     display: grid;
@@ -112,10 +113,11 @@ input {
 }
 
 .dato {
-    padding: 10px;
+    padding: 5px;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
-
 
 footer{
     background-color: #444;
@@ -123,4 +125,28 @@ footer{
     padding: 15px;
     text-align: center;
     font-weight: lighter;
+}
+
+.formularioCambio input{
+    margin-bottom: 20px;
+}
+
+#env{
+    background-color: green;
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.detalles{
+    margin: 10px;
+}
+
+#volv{
+   margin: 10px;
+   align-self: flex-end;
+}
+
+#tip{
+    margin-left: 350px;
 }

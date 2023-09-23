@@ -11,7 +11,8 @@ $id = '';
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
@@ -24,13 +25,14 @@ $id = '';
         <nav class="navbar color-base">
             <div class="container-fluid">
                 <a class="navbar-brand " href="index.php">
-                    <img src="./images/logo.png" alt="Logo" width="36" height="30" class=" d-inline-block align-text-top ">
+                    <img src="./images/logo.png" alt="Logo" width="36" height="30"
+                        class=" d-inline-block align-text-top ">
                 </a>
                 <h4 class="logo">Pokedex:Gotta catch 'em all! </h4>
         </nav>
 
     </header>
-    <main class="container">
+    <main class="container" style="height:500px;">
         <!--Form que guarda los datos del pokemon elegido y lo guarda en una varible para modificarlo en la bd-->
         <?php
         if (isset($_GET['id'])) {
@@ -52,16 +54,23 @@ $id = '';
 
         ?>
 
-        <form action="cambiar.php" method="post" enctype="multipart/form-data">
+        <h2 class="mt-4 fw-bold">Modififcar datos del pokemon</h2>
+        <form class="formularioCambio" action="cambiar.php" method="post" enctype="multipart/form-data">
             <!--Select que pasa el id-->
             <select name="ultimoid">
-                <option value="<?php echo $ultimoid; ?>"><?php echo $ultimoid; ?></option>
+                <option value="<?php echo $ultimoid; ?>">
+                    <?php echo $ultimoid; ?>
+                </option>
             </select>
-            <input type="text" placeholder="<?php echo $numero; ?>" name="nuevo_numero">
-            <input type="text" placeholder="<?php echo $nombre; ?>" name="nuevo_nombre">
-            <input type="file" name="tipo">
-            <input type="file" name='imagen'>
-            <input type="submit" value="Enviar" name="enviar">
+            <br> <label for="num">Numero</label> <input type="text" placeholder="<?php echo $numero; ?>"
+                name="nuevo_numero" id="num">
+            <br> <label for="nom">Nombre</label> <input type="text" placeholder="<?php echo $nombre; ?>"
+                name="nuevo_nombre" id="nom">
+            <br> <label for="tipo">Tipo</label> <input type="file" name="tipo" id="tipo">
+            <br> <label for="img">Imagen</label> <input type="file" name='imagen' id="img">
+            <br> <input type="submit" value="Actualizar" id="env" name="enviar">
+            <a href="index-logueado.php" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">ME
+                ARREPENTÍ</a>
         </form>
         <?php
 
@@ -135,7 +144,9 @@ $id = '';
     <footer> Celena Moscovich - Axel Leguero - Micaela Zara - Ludmila Pereyra</footer>
 
     <!-- BOOSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
