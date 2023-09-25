@@ -94,7 +94,7 @@ input {
 .grid-i {
     margin: auto;
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px 100px 200px;
+    grid-template-columns: 100px 100px 100px 100px 100px 50px;
     grid-gap: 10px;
     background-color: #fff;
     color: #444;
